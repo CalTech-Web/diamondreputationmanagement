@@ -1,0 +1,14 @@
+.DS_Store
+.playwright-mcp/
+
+# Dependencies and build artifacts (site app)
+node_modules/
+site/node_modules/
+site/.next/
+site/out/
+site/.vercel/
+
+# Environment
+.env
+.env.*
+*.local
