@@ -79,12 +79,70 @@ body {
   animation: float-slow 6s ease-in-out infinite;
 }
 
+/* Pulse scan animation for hero mockup */
+@keyframes scan-bar {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scan-bar 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: 1.2s;
+}
+
+/* Shimmer for stat values */
+@keyframes count-glow {
+  0%, 100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.25);
+  }
+}
+
+/* Section edge fade utility (mask bottom 60px for softer transitions) */
+.section-fade-bottom::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  pointer-events: none;
+}
+
+/* Card icon glow on hover */
+.icon-glow-hover:hover {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12), 0 4px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* Process connector line (desktop) */
+.process-connector {
+  position: absolute;
+  top: 28px;
+  right: -1rem;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #93c5fd, #c7d2fe);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .animate-fade-up,
-  .animate-float-slow {
+  .animate-float-slow,
+  .animate-scan {
     animation: none;
   }
 }

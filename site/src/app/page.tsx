@@ -8,6 +8,10 @@ import {
   Check,
   Clock,
   Phone,
+  Award,
+  Users,
+  BarChart2,
+  CalendarCheck,
 } from "lucide-react";
 import { SITE, STATS } from "@/lib/site";
 import { SERVICES } from "@/lib/services";
@@ -112,10 +116,13 @@ export default function Home() {
                 {SITE.phone}
               </a>
             </div>
-            <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {STATS.map((s) => (
-                <div key={s.label}>
-                  <dt className="text-2xl font-bold text-ink">{s.value}</dt>
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-blue-50 bg-blue-50/60 px-4 py-3 shadow-sm"
+                >
+                  <dt className="text-2xl font-bold tracking-tight text-ink">{s.value}</dt>
                   <dd className="mt-1 text-xs leading-snug text-gray-500">{s.label}</dd>
                 </div>
               ))}
@@ -124,20 +131,31 @@ export default function Home() {
 
           {/* Visual: search-results mockup */}
           <div className="animate-fade-up lg:justify-self-end" style={{ animationDelay: "120ms" }}>
-            <div className="mx-auto w-full max-w-md rounded-2xl border border-gray-100 bg-white p-5 shadow-2xl shadow-blue-900/10">
-              <div className="flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 text-sm text-gray-400">
-                <Search className="h-4 w-4" />
-                your name
+            <div className="mx-auto w-full max-w-md rounded-2xl border border-gray-100 bg-white p-5 shadow-2xl shadow-blue-900/10 ring-1 ring-blue-100/60">
+              {/* Browser chrome */}
+              <div className="mb-3 flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
               </div>
-              <div className="mt-4 space-y-3">
-                <SerpRow good title="Your verified profile" url="diamondreputationmanagement.com" />
-                <SerpRow good title="Featured interview and press" url="news.example.com" />
-                <SerpRow good title="Authentic 5-star reviews" url="google.com/reviews" />
+              <div className="relative flex items-center gap-2 overflow-hidden rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-400">
+                <Search className="h-4 w-4 shrink-0" />
+                <span>your name</span>
+                {/* Scanning shimmer */}
+                <div
+                  className="animate-scan absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/80 to-transparent"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="mt-4 space-y-2.5">
+                <SerpRow rank={1} good title="Your verified profile" url="diamondreputationmanagement.com" />
+                <SerpRow rank={2} good title="Featured interview and press" url="news.example.com" />
+                <SerpRow rank={3} good title="Authentic 5-star reviews" url="google.com/reviews" />
                 <div className="my-2 border-t border-dashed border-gray-200" />
-                <SerpRow title="Old damaging article" url="complaint-site.example" suppressed />
+                <SerpRow rank={8} title="Old damaging article" url="complaint-site.example" suppressed />
               </div>
-              <div className="mt-4 flex items-center gap-2 rounded-lg bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700">
-                <ShieldCheck className="h-4 w-4" />
+              <div className="mt-4 flex items-center gap-2 rounded-xl bg-emerald-50 px-3 py-2.5 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-100">
+                <ShieldCheck className="h-4 w-4 shrink-0" />
                 Page one under your control
               </div>
             </div>
@@ -145,13 +163,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value prop strip */}
-      <section className="border-b border-gray-100 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-medium text-gray-500">
-            97% of people research a brand online before they engage. 75% of clicks go to the top
-            three results. Page one is your reputation.
-          </p>
+      {/* Trust credential bar */}
+      <section className="border-b border-gray-100 bg-gray-50/80">
+        <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8 lg:gap-12">
+            <div className="flex items-center gap-2.5 text-sm font-medium text-gray-600">
+              <Award className="h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
+              <span>Reputation specialists since 2011</span>
+            </div>
+            <div className="hidden h-4 w-px bg-gray-300 sm:block" aria-hidden="true" />
+            <div className="flex items-center gap-2.5 text-sm font-medium text-gray-600">
+              <Users className="h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
+              <span>30+ years of combined ORM expertise</span>
+            </div>
+            <div className="hidden h-4 w-px bg-gray-300 sm:block" aria-hidden="true" />
+            <div className="flex items-center gap-2.5 text-sm font-medium text-gray-600">
+              <BarChart2 className="h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
+              <span>97% of buyers research online first</span>
+            </div>
+            <div className="hidden h-4 w-px bg-gray-300 sm:block" aria-hidden="true" />
+            <div className="flex items-center gap-2.5 text-sm font-medium text-gray-600">
+              <CalendarCheck className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
+              <span className="font-semibold text-accent">Free analysis in 48 hours</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -175,9 +210,9 @@ export default function Home() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}/`}
-                className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-100 hover:shadow-lg"
+                className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/8"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl brand-gradient text-white">
+                <div className="icon-glow-hover flex h-12 w-12 items-center justify-center rounded-xl brand-gradient text-white transition duration-200">
                   <s.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-ink">{s.name}</h3>
@@ -190,11 +225,11 @@ export default function Home() {
             ))}
             <Link
               href="/services/"
-              className="group flex flex-col justify-center rounded-2xl brand-gradient p-6 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="group flex flex-col justify-center rounded-2xl brand-gradient p-6 text-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/20"
             >
-              <TrendingUp className="h-8 w-8" />
+              <TrendingUp className="h-8 w-8 opacity-90" />
               <h3 className="mt-4 text-lg font-semibold">See the full approach</h3>
-              <p className="mt-2 text-sm text-blue-50">
+              <p className="mt-2 text-sm text-blue-50/90">
                 How suppression, amplification, reviews, and monitoring fit together.
               </p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold">
@@ -228,13 +263,15 @@ export default function Home() {
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2">
+          <ul className="grid gap-3 sm:grid-cols-2">
             {DIFFERENTIATORS.map((d) => (
               <li
                 key={d}
-                className="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm"
+                className="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-sm transition duration-150 hover:border-emerald-100 hover:bg-emerald-50/30"
               >
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 ring-1 ring-emerald-200">
+                  <Check className="h-3.5 w-3.5 text-accent" />
+                </span>
                 <span className="text-sm font-medium text-gray-700">{d}</span>
               </li>
             ))}
@@ -255,9 +292,16 @@ export default function Home() {
           </div>
           <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((step, i) => (
-              <li key={step.title} className="relative rounded-2xl border border-gray-100 bg-gray-50 p-6">
+              <li key={step.title} className="relative rounded-2xl border border-gray-100 bg-gray-50 p-6 transition duration-200 hover:border-blue-100 hover:bg-blue-50/30 hover:shadow-md">
+                {/* Connector arrow (desktop only, not on last item) */}
+                {i < PROCESS.length - 1 && (
+                  <span
+                    className="process-connector hidden lg:block"
+                    aria-hidden="true"
+                  />
+                )}
                 <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full brand-gradient text-sm font-bold text-white">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full brand-gradient text-sm font-bold text-white shadow-sm">
                     {i + 1}
                   </span>
                   <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-brand">
@@ -286,22 +330,30 @@ export default function Home() {
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {CASE_STUDIES.map((c) => (
-              <div key={c.tag} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <span className="inline-block rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-200">
+              <div
+                key={c.tag}
+                className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-200 hover:border-white/20 hover:bg-white/10"
+              >
+                <span className="inline-block self-start rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-200">
                   {c.tag}
                 </span>
-                <p className="mt-4 text-sm text-blue-100/80">
-                  <span className="font-semibold text-white">Challenge: </span>
-                  {c.challenge}
-                </p>
-                <p className="mt-3 text-sm text-blue-100/80">
-                  <span className="font-semibold text-white">Result: </span>
-                  {c.result}
-                </p>
-                <p className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-emerald-400">
-                  <Clock className="h-4 w-4" />
-                  {c.timeline}
-                </p>
+                <div className="mt-4 flex-1 space-y-3">
+                  <p className="text-sm text-blue-100/80">
+                    <span className="font-semibold text-white">Challenge: </span>
+                    {c.challenge}
+                  </p>
+                  <p className="text-sm text-blue-100/80">
+                    <span className="font-semibold text-white">Result: </span>
+                    {c.result}
+                  </p>
+                </div>
+                <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                  <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400">
+                    <Clock className="h-4 w-4" />
+                    {c.timeline}
+                  </p>
+                  <span className="text-xs text-blue-300/60">campaign duration</span>
+                </div>
               </div>
             ))}
           </div>
@@ -324,13 +376,13 @@ export default function Home() {
               <Link
                 key={i.slug}
                 href={`/industries/${i.slug}/`}
-                className="group flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:border-blue-100 hover:shadow-md"
+                className="group flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-900/6"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-brand">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-brand transition duration-200 group-hover:bg-blue-100 group-hover:text-blue-700">
                   <i.icon className="h-5 w-5" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-ink group-hover:text-brand">{i.name}</h3>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-ink transition group-hover:text-brand">{i.name}</h3>
                   <p className="mt-1 text-sm text-gray-600">{i.summary}</p>
                 </div>
               </Link>
@@ -354,16 +406,33 @@ export default function Home() {
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {TESTIMONIALS.map((t) => (
-              <figure key={t.name} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                <div className="flex gap-1 text-amber-400">
+              <figure
+                key={t.name}
+                className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition duration-200 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-900/6"
+              >
+                {/* Decorative large quote mark */}
+                <span
+                  className="pointer-events-none absolute right-4 top-2 select-none text-6xl font-serif leading-none text-blue-100"
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </span>
+                <div className="relative flex gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <blockquote className="mt-4 text-gray-700">&ldquo;{t.quote}&rdquo;</blockquote>
-                <figcaption className="mt-4 text-sm">
-                  <span className="font-semibold text-ink">{t.name}</span>
-                  <span className="text-gray-500">, {t.role}</span>
+                <blockquote className="relative mt-4 text-gray-700 leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-gray-100 pt-4 text-sm">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-brand">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <span className="block font-semibold text-ink">{t.name}</span>
+                    <span className="text-gray-500">{t.role}</span>
+                  </div>
                 </figcaption>
               </figure>
             ))}
@@ -386,27 +455,45 @@ export default function Home() {
 function SerpRow({
   title,
   url,
+  rank,
   good = false,
   suppressed = false,
 }: {
   title: string;
   url: string;
+  rank?: number;
   good?: boolean;
   suppressed?: boolean;
 }) {
   return (
-    <div className={`flex items-start gap-3 ${suppressed ? "opacity-50" : ""}`}>
-      <div
-        className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${
-          good ? "bg-emerald-500" : suppressed ? "bg-gray-300" : "bg-blue-500"
+    <div className={`flex items-center gap-3 ${suppressed ? "opacity-45" : ""}`}>
+      {/* Rank badge */}
+      <span
+        className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-xs font-bold ${
+          suppressed
+            ? "bg-gray-100 text-gray-400"
+            : good
+            ? "bg-emerald-50 text-emerald-600"
+            : "bg-blue-50 text-blue-600"
         }`}
-      />
-      <div>
-        <p className={`text-sm font-semibold ${suppressed ? "text-gray-500 line-through" : "text-ink"}`}>
+      >
+        {rank}
+      </span>
+      <div className="min-w-0 flex-1">
+        <p
+          className={`truncate text-sm font-semibold ${
+            suppressed ? "text-gray-400 line-through" : "text-ink"
+          }`}
+        >
           {title}
         </p>
-        <p className="text-xs text-gray-400">{url}</p>
+        <p className="truncate text-xs text-gray-400">{url}</p>
       </div>
+      {good && (
+        <span className="shrink-0">
+          <ShieldCheck className="h-4 w-4 text-emerald-500" />
+        </span>
+      )}
     </div>
   );
 }

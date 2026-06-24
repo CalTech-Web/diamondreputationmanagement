@@ -12,8 +12,13 @@ export function CtaBand({
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl brand-gradient px-6 py-14 text-center shadow-xl sm:px-12">
+        <div className="relative overflow-hidden rounded-3xl brand-gradient px-6 py-14 text-center shadow-xl shadow-blue-900/20 sm:px-12">
           <div className="dot-grid absolute inset-0 opacity-20" aria-hidden="true" />
+          {/* Radial light burst */}
+          <div
+            className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-3xl"
+            aria-hidden="true"
+          />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
               {heading}
