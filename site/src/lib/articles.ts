@@ -41,7 +41,7 @@ export const ARTICLES: Article[] = [
     body: [
       {
         type: "p",
-        text: "A single negative result on page one of Google can quietly cost you clients, candidates, and deals. The good news is that you have more control than it feels like in the moment. The honest news is that the right fix depends on what the result is and who controls it. This guide walks through every realistic path, from outright removal to professional suppression, so you can choose the approach that actually works for your situation.",
+        text: "A single negative result on page one of Google can quietly cost you clients, candidates, and deals. The good news is that you have more control than it feels like in the moment. The honest news is that the right fix depends on what the result is and who controls it. This guide walks through every realistic path, from outright removal to <a href=\"/services/content-suppression/\">professional content suppression</a>, so you can choose the approach that actually works for your situation.",
       },
       {
         type: "h2",
@@ -53,7 +53,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "Why does suppression work so well? Because of how people actually use search. Roughly 75% of clicks go to the top three results, and the vast majority never reach page two. If a damaging result sits at the bottom of page two, it has effectively stopped existing for your audience.",
+        text: "Why does suppression work so well? Because of how people actually use search. Roughly 75% of clicks go to the top three results, and the vast majority never reach the second page of the <a href=\"https://en.wikipedia.org/wiki/Search_engine_results_page\" target=\"_blank\" rel=\"noopener noreferrer\">search engine results page</a>. If a damaging result sits at the bottom of page two, it has effectively stopped existing for your audience.",
       },
       {
         type: "h2",
@@ -68,8 +68,8 @@ export const ARTICLES: Article[] = [
         items: [
           "The content violates the host site's own policies. Many sites will remove defamatory, harassing, or fake content if you report it correctly.",
           "You own or control the page. If it lives on a profile, directory, or old site you control, you can edit or delete it directly.",
-          "It contains personal information Google removes. Google removes results that expose certain sensitive personal data through its dedicated removal tools.",
-          "It is legally actionable. Genuinely defamatory or unlawful content can sometimes be removed through legal channels, which is a conversation for your attorney.",
+          "It contains personal information Google removes. Google removes results that expose certain sensitive personal data through its <a href=\"https://support.google.com/websearch/answer/9673730\" target=\"_blank\" rel=\"noopener noreferrer\">dedicated personal information removal tools</a>.",
+          "It is legally actionable. Genuinely <a href=\"https://www.law.cornell.edu/wex/defamation\" target=\"_blank\" rel=\"noopener noreferrer\">defamatory</a> or unlawful content can sometimes be removed through legal channels, which is a conversation for your attorney.",
         ],
       },
       {
@@ -82,7 +82,7 @@ export const ARTICLES: Article[] = [
           "Identify who controls the page, the website owner or the platform.",
           "Find the correct removal or content-policy channel for that site.",
           "Make a specific, factual request that points to the exact policy the content violates.",
-          "Use Google's own removal tools for outdated pages and qualifying personal information.",
+          "Use Google's tools to <a href=\"https://support.google.com/websearch/answer/6349986\" target=\"_blank\" rel=\"noopener noreferrer\">refresh outdated pages</a> in search, then request removal of any qualifying personal information.",
           "Keep records of every request and response.",
         ],
       },
@@ -139,11 +139,11 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "If the result sits on a high-authority site, ranks for a high-stakes term like your name or brand, or is part of a coordinated attack, professional reputation management is usually the fastest and safest path. A specialist team maps the exact targets, builds the assets that can realistically outrank them, and defends the gains so the negative result does not climb back.",
+        text: "If the result sits on a high-authority site, ranks for a high-stakes term like your name or brand, or is part of a coordinated attack, <a href=\"/services/online-reputation-management/\">professional reputation management</a> is usually the fastest and safest path. A specialist team maps the exact targets, builds the assets that can realistically outrank them, and defends the gains so the negative result does not climb back.",
       },
       {
         type: "p",
-        text: "At Diamond Reputation Management, we start every engagement with a free page-one analysis that tells you, honestly, what can be removed, what has to be suppressed, and how long it will realistically take. That clarity alone is often worth the call.",
+        text: "At Diamond Reputation Management, we start every engagement with a <a href=\"/free-orm-scan/\">free page-one analysis</a> that tells you, honestly, what can be removed, what has to be suppressed, and how long it will realistically take. That clarity alone is often worth the call.",
       },
     ],
     faqs: [
@@ -182,7 +182,7 @@ export const ARTICLES: Article[] = [
     body: [
       {
         type: "p",
-        text: "When a patient chooses a provider, they almost always look you up first. They read your reviews, scan page one for your name and your practice, and form an impression before they ever call. In healthcare, that impression is built on trust, and trust is the entire decision. This guide covers how doctors and practices build, protect, and recover their online reputation.",
+        text: "When a patient chooses a provider, they almost always look you up first. They read your reviews, scan page one for your name and your practice, and form an impression before they ever call. In healthcare, that impression is built on trust, and trust is the entire decision. This guide covers how doctors and practices build, protect, and recover their <a href=\"/services/online-reputation-management/\">online reputation</a>.",
       },
       {
         type: "h2",
@@ -190,7 +190,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "Few decisions feel as personal as choosing who will care for your health. Patients weigh reviews heavily, and a small number of negative reviews can carry outsized influence. Around 97% of people research a provider or brand online before engaging, and in medicine the stakes of that research are higher than almost anywhere else.",
+        text: "Few decisions feel as personal as choosing who will care for your health. Patients weigh reviews heavily, and a small number of negative reviews can carry outsized influence. Around 97% of people <a href=\"https://www.brightlocal.com/research/local-consumer-review-survey/\" target=\"_blank\" rel=\"noopener noreferrer\">research a provider or business online</a> before engaging, and in medicine the stakes of that research are higher than almost anywhere else.",
       },
       {
         type: "h2",
@@ -202,7 +202,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "The single most effective thing most practices can do is make it easy for satisfied patients to leave honest reviews. A steady stream of authentic positive reviews lifts your average rating, improves how you appear in the local pack, and dilutes the impact of any one negative review. The key word is authentic. Compliant systems that gently invite real patients to share their experience work. Fake reviews violate platform rules and put your practice at risk.",
+        text: "The single most effective thing most practices can do is make it easy for satisfied patients to <a href=\"https://support.google.com/business/answer/3474122\" target=\"_blank\" rel=\"noopener noreferrer\">leave honest reviews</a>. A steady stream of authentic positive reviews lifts your average rating, improves how you appear in the local pack, and dilutes the impact of any one negative review. The key word is authentic. Compliant systems that gently invite real patients to share their experience work. Fake reviews <a href=\"https://support.google.com/contributionpolicy/answer/7400114\" target=\"_blank\" rel=\"noopener noreferrer\">violate platform rules</a> and put your practice at risk.",
       },
       {
         type: "h3",
@@ -210,7 +210,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "Sometimes the problem is not a review but a result. An outdated article, a complaint site, or a damaging story can rank for a provider's name. When that content cannot be removed at the source, the answer is suppression: building stronger, authoritative owned assets that outrank the damaging result and push it off page one.",
+        text: "Sometimes the problem is not a review but a result. An outdated article, a complaint site, or a damaging story can rank for a provider's name. When that content cannot be removed at the source, the answer is <a href=\"/services/content-suppression/\">content suppression</a>: building stronger, authoritative owned assets that outrank the damaging result and push it off page one.",
       },
       {
         type: "h3",
@@ -250,7 +250,7 @@ export const ARTICLES: Article[] = [
         type: "ol",
         items: [
           "Audit how your practice and each provider appear on page one of Google.",
-          "Put a compliant review-generation system in place for happy patients.",
+          "Put a compliant <a href=\"/services/review-management/\">review generation system</a> in place for happy patients.",
           "Establish a privacy-safe response strategy for every new review.",
           "Identify any damaging result that needs suppression and build the owned assets to outrank it.",
           "Monitor every provider profile so new issues surface early.",
@@ -262,7 +262,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "If a damaging result ranks for your name, if negative reviews are shaping your local presence, or if you simply do not have time to manage this alongside patient care, a specialist team is worth the investment. At Diamond Reputation Management we manage reputation for practices and individual providers, and we start with a free analysis of exactly what patients see when they look you up.",
+        text: "If a damaging result ranks for your name, if negative reviews are shaping your local presence, or if you simply do not have time to manage this alongside patient care, a specialist team is worth the investment. At Diamond Reputation Management we manage <a href=\"/industries/healthcare/\">reputation for practices and individual providers</a>, and we start with a <a href=\"/free-orm-scan/\">free analysis</a> of exactly what patients see when they look you up.",
       },
     ],
     faqs: [
@@ -301,7 +301,7 @@ export const ARTICLES: Article[] = [
     body: [
       {
         type: "p",
-        text: "Online reputation management, often shortened to ORM, is the practice of shaping what people find when they search for your name or your brand. It combines search strategy, content, reviews, and monitoring to make sure page one of Google reflects the truth you want represented rather than the worst thing anyone has ever said about you. This guide explains what ORM is, how it works, and how to tell whether you need it.",
+        text: "Online reputation management, often shortened to ORM, is the practice of shaping what people find when they search for your name or your brand. It combines <a href=\"/services/online-reputation-management/\">search strategy</a>, content, reviews, and monitoring to make sure page one of Google reflects the truth you want represented rather than the worst thing anyone has ever said about you. This guide explains what ORM is, how it works, and how to tell whether you need it.",
       },
       {
         type: "h2",
@@ -309,7 +309,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "For most people and businesses, page one of Google is the reputation. About 97% of people research a brand or person online before they buy or engage, and roughly 75% of clicks go to the top three results. Whatever sits at the top of your search results is, for practical purposes, what the world believes about you. ORM is the discipline of making sure those results work in your favor.",
+        text: "For most people and businesses, page one of Google is the reputation. About 97% of people <a href=\"https://www.pewresearch.org/internet/2016/12/19/online-reviews/\" target=\"_blank\" rel=\"noopener noreferrer\">research a brand or person online</a> before they buy or engage, and roughly 75% of clicks go to the <a href=\"https://en.wikipedia.org/wiki/Search_engine_results_page\" target=\"_blank\" rel=\"noopener noreferrer\">top three results</a>. Whatever sits at the top of your search results is, for practical purposes, what the world believes about you. ORM is the discipline of making sure those results work in your favor.",
       },
       {
         type: "h2",
@@ -321,7 +321,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "Suppression is the practice of pushing negative or unwanted results down in the rankings by building stronger, more authoritative results that outrank them. The negative content stays on the web, but it moves to page two or lower where almost nobody looks. Suppression is the workhorse of ORM because most damaging content lives on sites you do not control and cannot simply delete.",
+        text: "<a href=\"/services/content-suppression/\">Suppression</a> is the practice of pushing negative or unwanted results down in the rankings by building stronger, more authoritative results that outrank them. The negative content stays on the web, but it moves to page two or lower where almost nobody looks. Suppression is the workhorse of ORM because most damaging content lives on sites you do not control and cannot simply delete.",
       },
       {
         type: "h3",
@@ -337,7 +337,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "For many businesses, reviews are the most visible form of reputation. Review management grows the volume of authentic positive reviews, monitors sentiment across platforms, and puts a real-time response strategy in place. Your star rating is often the very first signal a prospect sees.",
+        text: "For many businesses, reviews are the most visible form of reputation. <a href=\"/services/review-management/\">Review management</a> grows the volume of authentic positive reviews, monitors sentiment across platforms, and puts a real-time response strategy in place. Your star rating is often the very first signal a prospect sees.",
       },
       {
         type: "h3",
@@ -345,7 +345,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "Monitoring keeps continuous watch across search, news, and review platforms so new negative content surfaces while it is still small and cheap to address. The earliest mover almost always wins a reputation problem.",
+        text: "<a href=\"/services/brand-monitoring/\">Monitoring</a> keeps continuous watch across search, news, and review platforms so new negative content surfaces while it is still small and cheap to address. The earliest mover almost always wins a reputation problem.",
       },
       {
         type: "h2",
@@ -354,7 +354,7 @@ export const ARTICLES: Article[] = [
       {
         type: "ul",
         items: [
-          "It is not buying fake reviews or fake positive content, which violates platform rules and backfires.",
+          "It is not buying fake reviews or fake positive content, which <a href=\"https://www.ftc.gov/business-guidance/resources/featuring-online-customer-reviews-guide-platforms\" target=\"_blank\" rel=\"noopener noreferrer\">violates platform rules</a> and backfires.",
           "It is not a magic delete button that erases stubborn results overnight.",
           "It is not a one-time project, because reputation is defended over time.",
           "It is not the same as PR, though the two work well together.",
@@ -388,7 +388,7 @@ export const ARTICLES: Article[] = [
       },
       {
         type: "p",
-        text: "The right first step is always a clear-eyed look at what people actually find when they search you. At Diamond Reputation Management, our free page-one analysis maps the risks and the opportunities and gives you an honest plan, whether you work with us or not.",
+        text: "The right first step is always a clear-eyed look at what people actually find when they search you. At Diamond Reputation Management, our <a href=\"/free-orm-scan/\">free page-one analysis</a> maps the risks and the opportunities and gives you an honest plan, whether you work with us or not.",
       },
     ],
     faqs: [

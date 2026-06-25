@@ -48,9 +48,11 @@ function renderBlock(block: Block, i: number) {
       );
     case "p":
       return (
-        <p key={i} className="mt-4 leading-relaxed text-gray-700">
-          {block.text}
-        </p>
+        <p
+          key={i}
+          className="mt-4 leading-relaxed text-gray-700"
+          dangerouslySetInnerHTML={{ __html: block.text }}
+        />
       );
     case "ul":
       return (
@@ -58,7 +60,7 @@ function renderBlock(block: Block, i: number) {
           {block.items.map((item, j) => (
             <li key={j} className="flex gap-2 text-gray-700">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-              <span>{item}</span>
+              <span dangerouslySetInnerHTML={{ __html: item }} />
             </li>
           ))}
         </ul>
@@ -67,9 +69,7 @@ function renderBlock(block: Block, i: number) {
       return (
         <ol key={i} className="mt-4 list-decimal space-y-2 pl-5 text-gray-700 marker:font-semibold marker:text-brand">
           {block.items.map((item, j) => (
-            <li key={j} className="pl-1">
-              {item}
-            </li>
+            <li key={j} className="pl-1" dangerouslySetInnerHTML={{ __html: item }} />
           ))}
         </ol>
       );
@@ -124,7 +124,7 @@ export default async function ArticlePage({
             <Clock className="h-4 w-4" />
             {article.readTime}
           </p>
-          <div className="mt-2 text-lg">
+          <div className="mt-2 text-lg [&_a:hover]:text-brand-dark [&_a]:font-medium [&_a]:text-brand [&_a]:underline [&_a]:decoration-blue-300 [&_a]:underline-offset-2">
             {article.body.map((block, i) => renderBlock(block, i))}
           </div>
 
