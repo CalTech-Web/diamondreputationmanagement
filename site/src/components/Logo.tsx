@@ -1,6 +1,7 @@
 type Props = {
   className?: string;
   showText?: boolean;
+  light?: boolean;
 };
 
 // Diamond facet mark combined with a reputation shield.
@@ -32,16 +33,22 @@ export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
   );
 }
 
-export function Logo({ className = "", showText = true }: Props) {
+export function Logo({ className = "", showText = true, light = false }: Props) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <LogoMark />
       {showText && (
         <span className="flex flex-col leading-none">
-          <span className="text-[15px] font-bold tracking-tight text-ink">
+          <span
+            className={`text-[15px] font-bold tracking-tight ${light ? "text-white" : "text-ink"}`}
+          >
             Diamond Reputation
           </span>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
+          <span
+            className={`text-[11px] font-semibold uppercase tracking-[0.18em] ${
+              light ? "text-blue-300" : "text-brand"
+            }`}
+          >
             Management
           </span>
         </span>

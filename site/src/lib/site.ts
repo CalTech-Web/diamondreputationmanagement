@@ -27,8 +27,8 @@ export const SITE = {
     value: "5.0",
     count: 4,
   },
-  // Shared Cloudflare Turnstile site key used across CalTech Web client sites.
-  turnstileSiteKey: "0x4AAAAAACyyvvaAJd_unASU",
+  // Cloudflare Turnstile site key for diamondreputationmanagement.com.
+  turnstileSiteKey: "0x4AAAAAADqkO_8SWtoeCMlm",
   // GA4 Measurement ID is pending from the client. Leave empty to disable the tag.
   gaId: "",
 } as const;

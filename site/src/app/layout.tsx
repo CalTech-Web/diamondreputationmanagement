@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Marquee } from "@/components/Marquee";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
@@ -53,6 +54,7 @@ export default function RootLayout({
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <Header />
         <main className="flex-1">{children}</main>
+        <Marquee />
         <Footer />
         <Analytics />
       </body>

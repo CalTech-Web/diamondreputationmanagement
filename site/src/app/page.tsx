@@ -210,17 +210,22 @@ export default function Home() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}/`}
-                className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/8"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/8"
               >
-                <div className="icon-glow-hover flex h-12 w-12 items-center justify-center rounded-xl brand-gradient text-white transition duration-200">
-                  <s.icon className="h-6 w-6" />
+                <div className="relative h-24 brand-gradient">
+                  <div className="dot-grid absolute inset-0 opacity-20" aria-hidden="true" />
+                  <div className="absolute left-6 top-1/2 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-2xl bg-white/15 text-white ring-1 ring-white/30 backdrop-blur-sm transition duration-200 group-hover:scale-105">
+                    <s.icon className="h-7 w-7" />
+                  </div>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-ink">{s.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{s.summary}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                  Learn more
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                </span>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-semibold text-ink">{s.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{s.summary}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
+                    Learn more
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </span>
+                </div>
               </Link>
             ))}
             <Link
@@ -300,16 +305,14 @@ export default function Home() {
                     aria-hidden="true"
                   />
                 )}
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full brand-gradient text-sm font-bold text-white shadow-sm">
-                    {i + 1}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-brand">
-                    <Clock className="h-3.5 w-3.5" />
-                    {step.phase}
-                  </span>
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-ink">{step.title}</h3>
+                <span className="block text-5xl font-extrabold leading-none text-outline">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-brand">
+                  <Clock className="h-3.5 w-3.5" />
+                  {step.phase}
+                </span>
+                <h3 className="mt-2 text-lg font-semibold text-ink">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">{step.body}</p>
               </li>
             ))}
