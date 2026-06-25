@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { AuroraBackdrop } from "./AuroraBackdrop";
 
 export function CtaBand({
   heading = "See exactly what page one says about you.",
@@ -13,7 +14,7 @@ export function CtaBand({
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl brand-gradient px-6 py-14 text-center shadow-xl shadow-blue-900/20 sm:px-12">
-          <div className="dot-grid absolute inset-0 opacity-20" aria-hidden="true" />
+          <AuroraBackdrop blobs={false} network />
           {/* Radial light burst */}
           <div
             className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-3xl"

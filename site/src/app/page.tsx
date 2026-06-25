@@ -19,6 +19,7 @@ import { INDUSTRIES } from "@/lib/industries";
 import { JsonLd } from "@/components/JsonLd";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
+import { AuroraBackdrop } from "@/components/AuroraBackdrop";
 import { faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
@@ -321,8 +322,9 @@ export default function Home() {
       </section>
 
       {/* Case studies */}
-      <section className="bg-ink">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-ink">
+        <AuroraBackdrop network />
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
               Proof of work

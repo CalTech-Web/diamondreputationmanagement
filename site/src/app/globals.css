@@ -136,6 +136,48 @@ body {
   background: linear-gradient(90deg, #93c5fd, #c7d2fe);
 }
 
+/* Animated background blobs (aurora) for solid/dark sections */
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -32px) scale(1.12); }
+  66% { transform: translate(-28px, 22px) scale(0.94); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-44px, 30px) scale(1.16); }
+}
+@keyframes drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(34px, 40px) scale(1.08); }
+}
+.animate-drift-a { animation: drift-a 18s ease-in-out infinite; }
+.animate-drift-b { animation: drift-b 22s ease-in-out infinite; }
+.animate-drift-c { animation: drift-c 26s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 40s linear infinite; }
+
+/* Animated SVG stroke flow (network lines) */
+@keyframes dash-flow {
+  to { stroke-dashoffset: -240; }
+}
+.animate-dash { animation: dash-flow 6s linear infinite; }
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.35; r: 2.5; }
+  50% { opacity: 1; r: 4; }
+}
+
 /* Keyword marquee (Dermal-style scrolling band) */
 @keyframes marquee-x {
   from {
@@ -172,7 +214,12 @@ body {
   .animate-fade-up,
   .animate-float-slow,
   .animate-scan,
-  .marquee-track {
+  .marquee-track,
+  .animate-drift-a,
+  .animate-drift-b,
+  .animate-drift-c,
+  .animate-spin-slow,
+  .animate-dash {
     animation: none;
   }
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { FooterSignup } from "./FooterSignup";
+import { AuroraBackdrop } from "./AuroraBackdrop";
 import { SITE, SERVICE_NAV } from "@/lib/site";
 import { INDUSTRIES } from "@/lib/industries";
 
@@ -48,16 +49,8 @@ const socials = [
 export function Footer() {
   return (
     <footer className="relative z-10 -mt-10 overflow-hidden rounded-t-[2.5rem] bg-ink text-blue-100/80">
-      {/* decorative glow + texture + corner line art */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(50% 60% at 12% 0%, rgba(37,99,235,0.22) 0%, rgba(17,24,39,0) 60%), radial-gradient(45% 50% at 95% 100%, rgba(79,70,229,0.18) 0%, rgba(17,24,39,0) 60%)",
-        }}
-      />
-      <div className="dot-grid absolute inset-0 opacity-[0.05]" aria-hidden="true" />
+      {/* animated backdrop + corner line art */}
+      <AuroraBackdrop className="opacity-70" />
       <CornerArt className="pointer-events-none absolute -left-10 bottom-0 h-56 w-56 text-blue-400/10" />
       <CornerArt className="pointer-events-none absolute -right-10 top-8 h-56 w-56 rotate-180 text-indigo-400/10" />
 
