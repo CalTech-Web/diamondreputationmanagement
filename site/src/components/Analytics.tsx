@@ -8,7 +8,7 @@ export function Analytics() {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <Script id="ga4" strategy="afterInteractive">
         {`

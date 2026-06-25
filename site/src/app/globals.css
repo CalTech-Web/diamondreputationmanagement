@@ -174,8 +174,8 @@ body {
 .animate-dash { animation: dash-flow 6s linear infinite; }
 
 @keyframes node-pulse {
-  0%, 100% { opacity: 0.35; r: 2.5; }
-  50% { opacity: 1; r: 4; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 /* Keyword marquee (Dermal-style scrolling band) */

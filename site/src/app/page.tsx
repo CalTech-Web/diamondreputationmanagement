@@ -185,7 +185,7 @@ export default function Home() {
             <div className="hidden h-4 w-px bg-gray-300 sm:block" aria-hidden="true" />
             <div className="flex items-center gap-2.5 text-sm font-medium text-gray-600">
               <CalendarCheck className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-              <span className="font-semibold text-accent">Free analysis in 48 hours</span>
+              <span className="font-semibold text-emerald-700">Free analysis in 48 hours</span>
             </div>
           </div>
         </div>
@@ -306,7 +306,7 @@ export default function Home() {
                     aria-hidden="true"
                   />
                 )}
-                <span className="block text-5xl font-extrabold leading-none text-outline">
+                <span className="gradient-text block text-5xl font-extrabold leading-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-brand">
