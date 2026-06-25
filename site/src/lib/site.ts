@@ -2,7 +2,7 @@ export const SITE = {
   name: "Diamond Reputation Management",
   shortName: "Diamond Reputation",
   domain: "diamondreputationmanagement.com",
-  url: "https://diamond-reputation-management.vercel.app",
+  url: "https://www.diamondreputationmanagement.com",
   formSite: "diamondreputationmanagement.com",
   tagline: "Powered by People, Perfected with AI.",
   description:
