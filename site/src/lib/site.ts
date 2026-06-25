@@ -29,8 +29,8 @@ export const SITE = {
   },
   // Cloudflare Turnstile site key for diamondreputationmanagement.com.
   turnstileSiteKey: "0x4AAAAAADqkO_8SWtoeCMlm",
-  // GA4 Measurement ID is pending from the client. Leave empty to disable the tag.
-  gaId: "",
+  // GA4 Measurement ID. Leave empty to disable the tag.
+  gaId: "G-9QQ2LJS6Q4",
 } as const;
 
 export const STATS = [
