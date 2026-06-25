@@ -9,25 +9,26 @@ const WORDS = [
   "Own Page One",
 ];
 
-// Big scrolling keyword band, sits above the footer.
+// Big scrolling keyword band. Sits directly above the footer, which pulls up
+// over its lower edge so the text tucks behind the footer (Dermal-style).
 export function Marquee() {
   const sequence = [...WORDS, ...WORDS];
   return (
     <section
       aria-hidden="true"
-      className="marquee-mask relative overflow-hidden border-t border-gray-100 bg-gradient-to-b from-white to-blue-50/60 py-8"
+      className="marquee-mask relative z-0 overflow-hidden bg-white pt-10 pb-16"
     >
       <div className="marquee-track">
         {sequence.map((w, i) => (
           <span key={i} className="flex items-center">
             <span
-              className={`px-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl ${
+              className={`px-8 text-5xl font-black uppercase leading-none tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl ${
                 i % 2 === 0 ? "text-ink" : "text-outline"
               }`}
             >
               {w}
             </span>
-            <Gem className="h-6 w-6 shrink-0 text-brand sm:h-7 sm:w-7" />
+            <Gem className="h-7 w-7 shrink-0 text-brand sm:h-9 sm:w-9" />
           </span>
         ))}
       </div>

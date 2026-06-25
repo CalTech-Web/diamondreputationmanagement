@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
+import { FooterSignup } from "./FooterSignup";
 import { SITE, SERVICE_NAV } from "@/lib/site";
 import { INDUSTRIES } from "@/lib/industries";
 
@@ -12,10 +13,42 @@ const company = [
   { label: "Contact Us", href: "/contact/" },
 ];
 
+// Brand glyphs (lucide-react dropped brand icons, so these are inlined).
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2C16.7.1 15.8 0 14.7 0 12.3 0 11 1.4 11 4v2H8v3h3v9h3V9z" />
+    </svg>
+  );
+}
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H20v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H12z" />
+    </svg>
+  );
+}
+
+// Social links point to the contact page until real profile URLs are provided.
+const socials = [
+  { label: "Facebook", icon: FacebookIcon, href: "/contact/" },
+  { label: "Instagram", icon: InstagramIcon, href: "/contact/" },
+  { label: "LinkedIn", icon: LinkedinIcon, href: "/contact/" },
+];
+
 export function Footer() {
   return (
-    <footer className="relative mt-auto overflow-hidden bg-ink text-blue-100/80">
-      {/* decorative flourishes */}
+    <footer className="relative z-10 -mt-10 overflow-hidden rounded-t-[2.5rem] bg-ink text-blue-100/80">
+      {/* decorative glow + texture + corner line art */}
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden="true"
@@ -25,35 +58,19 @@ export function Footer() {
         }}
       />
       <div className="dot-grid absolute inset-0 opacity-[0.05]" aria-hidden="true" />
+      <CornerArt className="pointer-events-none absolute -left-10 bottom-0 h-56 w-56 text-blue-400/10" />
+      <CornerArt className="pointer-events-none absolute -right-10 top-8 h-56 w-56 rotate-180 text-indigo-400/10" />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Top CTA row */}
-        <div className="flex flex-col items-start justify-between gap-6 border-b border-white/10 pb-12 lg:flex-row lg:items-center">
-          <div>
-            <h2 className="max-w-xl text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              See exactly what page one says about you.
-            </h2>
-            <p className="mt-2 text-blue-100/70">
-              Free analysis in 48 hours. No contract, no obligation.
-            </p>
-          </div>
-          <Link
-            href="/free-orm-scan/"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full brand-gradient px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-900/30 transition hover:opacity-90"
-          >
-            Get a Free ORM Scan
-            <ArrowRight className="h-5 w-5" />
-          </Link>
-        </div>
-
+      <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
         {/* Link columns */}
-        <div className="grid gap-10 py-12 lg:grid-cols-5">
+        <div className="grid gap-10 pb-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo light />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-blue-100/70">
               {SITE.description}
             </p>
-            <div className="mt-5 space-y-2 text-sm">
+            <FooterSignup />
+            <div className="mt-6 space-y-2 text-sm">
               <a href={SITE.phoneHref} className="flex items-center gap-2 transition hover:text-white">
                 <Phone className="h-4 w-4 text-blue-400" />
                 {SITE.phone}
@@ -103,6 +120,21 @@ export function Footer() {
             </span>
           </div>
         </div>
+
+        {/* Social row */}
+        <div className="mt-6 flex items-center justify-center gap-3 sm:justify-end">
+          <span className="text-sm text-blue-100/60">Follow us</span>
+          {socials.map((s) => (
+            <Link
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-blue-100/70 transition hover:border-brand hover:bg-brand hover:text-white"
+            >
+              <s.icon className="h-4 w-4" />
+            </Link>
+          ))}
+        </div>
       </div>
     </footer>
   );
@@ -128,5 +160,25 @@ function FooterCol({
         ))}
       </ul>
     </div>
+  );
+}
+
+function CornerArt({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className={className} fill="none" aria-hidden="true">
+      <path
+        d="M10 190 C 70 150, 120 120, 190 40"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path d="M60 168 l16 -26 18 8 z" stroke="currentColor" strokeWidth="2" />
+      <path d="M104 132 l16 -26 18 8 z" stroke="currentColor" strokeWidth="2" />
+      <path d="M150 92 l16 -26 18 8 z" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="M150 50 l12 -20 12 20 -12 20 z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+    </svg>
   );
 }
