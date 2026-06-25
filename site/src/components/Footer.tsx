@@ -63,8 +63,8 @@ export function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
         {/* Link columns */}
-        <div className="grid gap-10 pb-12 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 pb-12 lg:grid-cols-5">
+          <div className="col-span-2 lg:col-span-2">
             <Logo light />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-blue-100/70">
               {SITE.description}
