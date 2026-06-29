@@ -70,7 +70,7 @@ export default function FreeOrmScan() {
           <div className="rounded-2xl border border-gray-100 bg-gray-50 p-6 shadow-sm sm:p-8">
             <h2 className="text-xl font-bold text-ink">Request your free ORM scan</h2>
             <p className="mt-1 text-sm text-gray-600">
-              Tell us the name or brand to review and we will take it from there.
+              Tell us the keyword or search term of concern and we will take it from there.
             </p>
             <div className="mt-6">
               <LeadForm source="free-quote" submitLabel="Get My Free Scan" showPhone />

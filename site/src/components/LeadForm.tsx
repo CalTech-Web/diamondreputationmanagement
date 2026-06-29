@@ -37,7 +37,7 @@ export function LeadForm({
     const parts = [
       showPhone && data.get("phone") ? `Phone: ${data.get("phone")}` : "",
       showService && data.get("service") ? `Interested in: ${data.get("service")}` : "",
-      data.get("website") ? `Name or brand to review: ${data.get("website")}` : "",
+      data.get("website") ? `Keyword or search term of concern: ${data.get("website")}` : "",
       "",
       (data.get("message") as string) || "",
     ].filter(Boolean);
@@ -91,9 +91,9 @@ export function LeadForm({
           <Field label="Phone" name="phone" type="tel" autoComplete="tel" />
         )}
         <Field
-          label="Your name or brand to review"
+          label="Keyword or search term of concern"
           name="website"
-          placeholder="The name or company you want us to look up"
+          placeholder="The name, brand, or search term you want us to look up"
         />
         {showService && (
           <div>

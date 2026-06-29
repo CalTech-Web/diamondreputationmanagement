@@ -1,25 +1,22 @@
 import Link from "next/link";
 import {
-  ShieldCheck,
-  Search,
   TrendingUp,
   ArrowRight,
   Star,
   Check,
   Clock,
-  Phone,
   Award,
   Users,
   BarChart2,
   CalendarCheck,
 } from "lucide-react";
-import { SITE, STATS } from "@/lib/site";
 import { SERVICES } from "@/lib/services";
 import { INDUSTRIES } from "@/lib/industries";
 import { JsonLd } from "@/components/JsonLd";
 import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
 import { AuroraBackdrop } from "@/components/AuroraBackdrop";
+import { Hero } from "@/components/Hero";
 import { faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
@@ -83,86 +80,7 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema(HOME_FAQS)} />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-gray-100 bg-white">
-        <div className="hero-glow absolute inset-0" aria-hidden="true" />
-        <div className="dot-grid absolute inset-0 opacity-30" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:py-28">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-sm font-semibold text-brand">
-              <Star className="h-4 w-4 fill-current" />
-              5.0 rating, reputation specialists since 2011
-            </span>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
-              Negative content on page one costs you{" "}
-              <span className="gradient-text">clients, revenue, and trust.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
-              We suppress harmful search results and amplify positive brand stories so your name
-              owns its narrative. {SITE.tagline}
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/free-orm-scan/"
-                className="inline-flex items-center justify-center gap-2 rounded-full brand-gradient px-7 py-3.5 text-base font-semibold text-white shadow-md transition hover:opacity-90"
-              >
-                Get a Free ORM Scan
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <a
-                href={SITE.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-7 py-3.5 text-base font-semibold text-ink transition hover:border-brand hover:text-brand"
-              >
-                <Phone className="h-5 w-5" />
-                {SITE.phone}
-              </a>
-            </div>
-            <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {STATS.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-xl border border-blue-50 bg-blue-50/60 px-4 py-3 shadow-sm"
-                >
-                  <dt className="text-2xl font-bold tracking-tight text-ink">{s.value}</dt>
-                  <dd className="mt-1 text-xs leading-snug text-gray-500">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          {/* Visual: search-results mockup */}
-          <div className="animate-fade-up lg:justify-self-end" style={{ animationDelay: "120ms" }}>
-            <div className="mx-auto w-full max-w-md rounded-2xl border border-gray-100 bg-white p-5 shadow-2xl shadow-blue-900/10 ring-1 ring-blue-100/60">
-              {/* Browser chrome */}
-              <div className="mb-3 flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
-              </div>
-              <div className="relative flex items-center gap-2 overflow-hidden rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm text-gray-400">
-                <Search className="h-4 w-4 shrink-0" />
-                <span>your name</span>
-                {/* Scanning shimmer */}
-                <div
-                  className="animate-scan absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/80 to-transparent"
-                  aria-hidden="true"
-                />
-              </div>
-              <div className="mt-4 space-y-2.5">
-                <SerpRow rank={1} good title="Your verified profile" url="diamondreputationmanagement.com" />
-                <SerpRow rank={2} good title="Featured interview and press" url="news.example.com" />
-                <SerpRow rank={3} good title="Authentic 5-star reviews" url="google.com/reviews" />
-                <div className="my-2 border-t border-dashed border-gray-200" />
-                <SerpRow rank={8} title="Old damaging article" url="complaint-site.example" suppressed />
-              </div>
-              <div className="mt-4 flex items-center gap-2 rounded-xl bg-emerald-50 px-3 py-2.5 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-100">
-                <ShieldCheck className="h-4 w-4 shrink-0" />
-                Page one under your control
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Trust credential bar */}
       <section className="border-b border-gray-100 bg-gray-50/80">
@@ -454,51 +372,5 @@ export default function Home() {
 
       <CtaBand />
     </>
-  );
-}
-
-function SerpRow({
-  title,
-  url,
-  rank,
-  good = false,
-  suppressed = false,
-}: {
-  title: string;
-  url: string;
-  rank?: number;
-  good?: boolean;
-  suppressed?: boolean;
-}) {
-  return (
-    <div className={`flex items-center gap-3 ${suppressed ? "opacity-45" : ""}`}>
-      {/* Rank badge */}
-      <span
-        className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-xs font-bold ${
-          suppressed
-            ? "bg-gray-100 text-gray-400"
-            : good
-            ? "bg-emerald-50 text-emerald-600"
-            : "bg-blue-50 text-blue-600"
-        }`}
-      >
-        {rank}
-      </span>
-      <div className="min-w-0 flex-1">
-        <p
-          className={`truncate text-sm font-semibold ${
-            suppressed ? "text-gray-400 line-through" : "text-ink"
-          }`}
-        >
-          {title}
-        </p>
-        <p className="truncate text-xs text-gray-400">{url}</p>
-      </div>
-      {good && (
-        <span className="shrink-0">
-          <ShieldCheck className="h-4 w-4 text-emerald-500" />
-        </span>
-      )}
-    </div>
   );
 }
