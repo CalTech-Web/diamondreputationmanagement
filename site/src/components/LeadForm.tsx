@@ -57,6 +57,8 @@ export function LeadForm({
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
+      const wl = window as unknown as { gtag?: (...args: unknown[]) => void };
+      if (wl.gtag) wl.gtag("event", "generate_lead", { form_name: "contact" });
       form.reset();
     } catch {
       setStatus("error");
